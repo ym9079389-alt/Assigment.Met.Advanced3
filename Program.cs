@@ -97,29 +97,43 @@ namespace Assigment.Met.Advanced3
             #endregion
 
             #region Task 5
-            Queue<string> queue = new Queue<string>();
-            queue.Enqueue("Report.pdf");
-            queue.Enqueue("Invoice.pdf");
-            queue.Enqueue("Letter.docx");
-            queue.Enqueue("Resume.pdf");
-            queue.Enqueue("Photo.jpg");
-            Console.WriteLine($"Count: {queue.Count}");
-            foreach (var item in queue)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine($"Peek: {queue.Peek()}");
+            //Queue<string> queue = new Queue<string>();
+            //queue.Enqueue("Report.pdf");
+            //queue.Enqueue("Invoice.pdf");
+            //queue.Enqueue("Letter.docx");
+            //queue.Enqueue("Resume.pdf");
+            //queue.Enqueue("Photo.jpg");
+            //Console.WriteLine($"Count: {queue.Count}");
+            //foreach (var item in queue)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine($"Peek: {queue.Peek()}");
 
-            while (queue.Count > 0)
-            {
-                string deq = queue.Dequeue();
-                Console.WriteLine($"Printing: {deq}");
-            }
-            Console.WriteLine($"Try Dequeue: {queue.TryDequeue(out string result)}");
+            //while (queue.Count > 0)
+            //{
+            //    string deq = queue.Dequeue();
+            //    Console.WriteLine($"Printing: {deq}");
+            //}
+            //Console.WriteLine($"Try Dequeue: {queue.TryDequeue(out string result)}");
             #endregion
 
             #region Task 6
+            Stack<string> stack = new Stack<string>();
+            stack.Push("google.com");
+            stack.Push("github.com");
+            stack.Push("stackoverflow.com");
+            stack.Push("youtube.com");
+            stack.Push("claude.ai");
 
+            Console.WriteLine($"Peek: {stack.Peek()}");
+            Console.WriteLine($"Pop: {stack.Pop()}");
+            Console.WriteLine($"Pop: {stack.Pop()}");
+            Console.WriteLine($"Pop: {stack.Pop()}");
+            Console.WriteLine($"Currently Bage: {stack.Peek()}");
+            stack.Pop();
+            stack.Pop();
+            Console.WriteLine($"Try Pop: {stack.TryPop(out string result)}");
             #endregion
         }
         static void PrintColliction<T>(string name, IEnumerable<T> collection)
