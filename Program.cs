@@ -43,33 +43,57 @@ namespace Assigment.Met.Advanced3
             #endregion
 
             #region Task 3
-            Dictionary<int, string> PhoneBook = new Dictionary<int, string>();
-            PhoneBook[01075618170] = "Ahmed";
-            PhoneBook[01011226169] = "Aliaa";
-            PhoneBook[01113370769] = "Youssef";
-            PhoneBook[01146818023] = "Mona";
-            try
-            {
-                PhoneBook.Add(01075618170, "Ahmed");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            Console.WriteLine(PhoneBook.TryAdd(01075618170, "Ahmed"));
-            Console.WriteLine(PhoneBook.ContainsValue("Aliaa"));
-            bool res = PhoneBook.ContainsValue("Ali");
-            Console.WriteLine(res == false ? "Not Found" : "Found");
+            //Dictionary<int, string> PhoneBook = new Dictionary<int, string>();
+            //PhoneBook[01075618170] = "Ahmed";
+            //PhoneBook[01011226169] = "Aliaa";
+            //PhoneBook[01113370769] = "Youssef";
+            //PhoneBook[01146818023] = "Mona";
+            //try
+            //{
+            //    PhoneBook.Add(01075618170, "Ahmed");
+            //}
+            //catch (ArgumentException ex)
+            //{
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //}
+            //Console.WriteLine(PhoneBook.TryAdd(01075618170, "Ahmed"));
+            //Console.WriteLine(PhoneBook.ContainsValue("Aliaa"));
+            //bool res = PhoneBook.ContainsValue("Ali");
+            //Console.WriteLine(res == false ? "Not Found" : "Found");
 
-            foreach(var key in PhoneBook.Keys)
+            //foreach(var key in PhoneBook.Keys)
+            //{
+            //    Console.Write($"Key: {key}, ");
+            //}
+            //Console.WriteLine();
+            //foreach (var value in PhoneBook.Values)
+            //{
+            //    Console.Write($"Value: {value}, ");
+            //}
+            #endregion
+
+            #region Task 4
+            HashSet<string> emails = new HashSet<string>
             {
-                Console.Write($"Key: {key}, ");
-            }
-            Console.WriteLine();
-            foreach (var value in PhoneBook.Values)
-            {
-                Console.Write($"Value: {value}, ");
-            }
+                "ahmed@test.com".ToLower(),
+                "sara@test.com".ToLower(),
+                "AHMED@test.com".ToLower(),
+                "Sara@Test.Com".ToLower(),
+                
+            };
+            HashSet<int> A = new HashSet<int> { 1, 2, 3, 4, 5 };
+            HashSet<int> B = new HashSet<int> { 4, 5, 6, 7, 8 };
+
+            Console.WriteLine($"Count: {emails.Count}");
+            Console.WriteLine(string.Join(", ", emails));
+            //A.UnionWith(B);
+            //Console.WriteLine($"Union: {string.Join(", ", A)}");
+            //A.IntersectWith(B);
+            //Console.WriteLine($"Intersection: {string.Join(", ", A)}");
+            //A.ExceptWith(B);
+            //Console.WriteLine($"Except: {string.Join(", ", A)}");
+            HashSet<int> C = new HashSet<int> { 1, 2};
+            Console.WriteLine($"Is [1, 2] Subset of A: {C.IsSubsetOf(A)}");
             #endregion
         }
         static void PrintColliction<T>(string name, IEnumerable<T> collection)
