@@ -73,27 +73,53 @@ namespace Assigment.Met.Advanced3
             #endregion
 
             #region Task 4
-            HashSet<string> emails = new HashSet<string>
-            {
-                "ahmed@test.com".ToLower(),
-                "sara@test.com".ToLower(),
-                "AHMED@test.com".ToLower(),
-                "Sara@Test.Com".ToLower(),
-                
-            };
-            HashSet<int> A = new HashSet<int> { 1, 2, 3, 4, 5 };
-            HashSet<int> B = new HashSet<int> { 4, 5, 6, 7, 8 };
+            //HashSet<string> emails = new HashSet<string>
+            //{
+            //    "ahmed@test.com".ToLower(),
+            //    "sara@test.com".ToLower(),
+            //    "AHMED@test.com".ToLower(),
+            //    "Sara@Test.Com".ToLower(),
 
-            Console.WriteLine($"Count: {emails.Count}");
-            Console.WriteLine(string.Join(", ", emails));
-            //A.UnionWith(B);
-            //Console.WriteLine($"Union: {string.Join(", ", A)}");
-            //A.IntersectWith(B);
-            //Console.WriteLine($"Intersection: {string.Join(", ", A)}");
-            //A.ExceptWith(B);
-            //Console.WriteLine($"Except: {string.Join(", ", A)}");
-            HashSet<int> C = new HashSet<int> { 1, 2};
-            Console.WriteLine($"Is [1, 2] Subset of A: {C.IsSubsetOf(A)}");
+            //};
+            //HashSet<int> A = new HashSet<int> { 1, 2, 3, 4, 5 };
+            //HashSet<int> B = new HashSet<int> { 4, 5, 6, 7, 8 };
+
+            //Console.WriteLine($"Count: {emails.Count}");
+            //Console.WriteLine(string.Join(", ", emails));
+            ////A.UnionWith(B);
+            ////Console.WriteLine($"Union: {string.Join(", ", A)}");
+            ////A.IntersectWith(B);
+            ////Console.WriteLine($"Intersection: {string.Join(", ", A)}");
+            ////A.ExceptWith(B);
+            ////Console.WriteLine($"Except: {string.Join(", ", A)}");
+            //HashSet<int> C = new HashSet<int> { 1, 2};
+            //Console.WriteLine($"Is [1, 2] Subset of A: {C.IsSubsetOf(A)}");
+            #endregion
+
+            #region Task 5
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("Report.pdf");
+            queue.Enqueue("Invoice.pdf");
+            queue.Enqueue("Letter.docx");
+            queue.Enqueue("Resume.pdf");
+            queue.Enqueue("Photo.jpg");
+            Console.WriteLine($"Count: {queue.Count}");
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine($"Peek: {queue.Peek()}");
+
+            while (queue.Count > 0)
+            {
+                string deq = queue.Dequeue();
+                Console.WriteLine($"Printing: {deq}");
+            }
+            Console.WriteLine($"Try Dequeue: {queue.TryDequeue(out string result)}");
+            #endregion
+
+            #region Task 6
+
             #endregion
         }
         static void PrintColliction<T>(string name, IEnumerable<T> collection)
