@@ -24,22 +24,52 @@ namespace Assigment.Met.Advanced3
             #endregion
 
             #region Task 2
-            Dictionary<int, string> Leaderboard = new Dictionary<int, string>
+            //Dictionary<int, string> Leaderboard = new Dictionary<int, string>
+            //{
+            //    { 500, "Ahmed" },
+            //    { 200, "Sara" },
+            //    { 800, "Ali" },
+            //    { 350, "Mona" }
+            //};
+
+            //PrintColliction("Leaderboard", Leaderboard);
+
+            //Console.WriteLine($"First Key: {Leaderboard.Keys.First()}");
+            //Console.WriteLine($"Last Key: {Leaderboard.Keys.Last()}");
+            //Console.WriteLine($"500 Key: {Leaderboard.ContainsKey(500)}");
+            //Console.WriteLine($"999 Key: {Leaderboard.ContainsKey(999)}");
+            //Leaderboard.Remove(200);
+            //PrintColliction("After Removing:", Leaderboard);
+            #endregion
+
+            #region Task 3
+            Dictionary<int, string> PhoneBook = new Dictionary<int, string>();
+            PhoneBook[01075618170] = "Ahmed";
+            PhoneBook[01011226169] = "Aliaa";
+            PhoneBook[01113370769] = "Youssef";
+            PhoneBook[01146818023] = "Mona";
+            try
             {
-                { 500, "Ahmed" },
-                { 200, "Sara" },
-                { 800, "Ali" },
-                { 350, "Mona" }
-            };
+                PhoneBook.Add(01075618170, "Ahmed");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            Console.WriteLine(PhoneBook.TryAdd(01075618170, "Ahmed"));
+            Console.WriteLine(PhoneBook.ContainsValue("Aliaa"));
+            bool res = PhoneBook.ContainsValue("Ali");
+            Console.WriteLine(res == false ? "Not Found" : "Found");
 
-            PrintColliction("Leaderboard", Leaderboard);
-
-            Console.WriteLine($"First Key: {Leaderboard.Keys.First()}");
-            Console.WriteLine($"Last Key: {Leaderboard.Keys.Last()}");
-            Console.WriteLine($"500 Key: {Leaderboard.ContainsKey(500)}");
-            Console.WriteLine($"999 Key: {Leaderboard.ContainsKey(999)}");
-            Leaderboard.Remove(200);
-            PrintColliction("After Removing:", Leaderboard);
+            foreach(var key in PhoneBook.Keys)
+            {
+                Console.Write($"Key: {key}, ");
+            }
+            Console.WriteLine();
+            foreach (var value in PhoneBook.Values)
+            {
+                Console.Write($"Value: {value}, ");
+            }
             #endregion
         }
         static void PrintColliction<T>(string name, IEnumerable<T> collection)
